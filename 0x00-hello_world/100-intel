@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if a file name is provided
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <C file name>"
+  exit 1
+fi
+
+# Extract the base name of the C file
+CFILE=$(basename "$1" .c)
+
+# Generate the assembly code
+gcc -S -masm=intel "$CFILE.c"
+
+# Rename the output file with the .s extension
+mv "$CFILE.s" "$CFILE.c.s"
