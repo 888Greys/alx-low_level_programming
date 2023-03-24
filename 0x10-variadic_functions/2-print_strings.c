@@ -35,4 +35,3 @@ printf("\n");
 
 va_end(strings);
 }
-
