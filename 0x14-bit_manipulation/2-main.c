@@ -43,4 +43,3 @@ n = get_bit(1024, 0);
 printf("Bit at index 0: %d\n", n);
 return (0);
 }
-
