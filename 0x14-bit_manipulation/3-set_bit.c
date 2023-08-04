@@ -1,18 +1,16 @@
 #include "main.h"
-
 /**
- * makeready_bit - sets a bit at a given index to 1
- * @num: pointer to the number to change
- * @indexb: index of the bit to set to 1
- *
- * Return: 1 when succeded, -1 when it fails
+ * get_bit - returns the value
+ * @n: number to search
+ * @index: index
+ * Return: value
  */
-int makeready_bit(unsigned long int *num, unsigned int indexb)
+int get_bit(unsigned long int n, unsigned int index)
 {
-if (indexb > 63)
+int bit_val;
+if (index > 63)
 return (-1);
-
-*num = ((1UL << indexb) | *num);
-return (1);
+bit_val = (n >> index) & 1;
+return (bit_val);
 }
 
