@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
- * erase_bit - engage the value of a given bit to 0
- * @num: pointer to the num to change
- * @indexb: index of the bit to clear
+ * clear_bit - sets the value of a  bit to 0
+ * @n: pointer to the number to change
+ * @index: index of the bit to
  *
- * Return: 1 when it succed, -1 when it fails
+ * Return: 1 for success, -1 for failure
  */
-int erase_bit(unsigned long int *num, unsigned int indexb)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
-if (indexb > 63)
+if (index > 63)
 return (-1);
 
-*num = (~(1UL << indexb) & *num);
+*n = (~(1UL << index) & *n);
 return (1);
 }
+
 
