@@ -3,13 +3,10 @@
 #include <stdio.h>
 
 /**
- * shash_table_create - Creates a sorted hash table.
- * @size: The size of the array.
- *
- * Return: A pointer to the newly created sorted hash table,
- *or NULL on failure.
- */
-
+* shash_table_create - Creates a hash table
+* @size: the size of the array
+* Return: a pointer to the newly created hash table
+*/
 shash_table_t *shash_table_create(unsigned long int size)
 {
 shash_table_t *new_hash_table;
@@ -36,16 +33,12 @@ new_hash_table->array[size - 1] = NULL;
 return (new_hash_table);
 }
 /**
- * update_key - Update the value of a key if the
- *key exists in a linked list.
- * @h: Head of the linked list.
- * @key: The key of the node to be updated.
- * @value: The new value for the node.
- *
- * Return: 1 if the update is successful, 0 if
- *there is no match for the key, -1 if malloc failed.
- */
-
+* update_key - update value of key if key exists
+* @h: head of linked list
+* @key: key of node
+* @value: value of node
+* Return: 1 if succesful, 0 if not match, -1 if malloc failed
+*/
 int update_key(shash_node_t **h, const char *key, const char *value)
 {
 shash_node_t *copy = *h;
@@ -65,15 +58,12 @@ return (0);
 }
 
 /**
- * add_node - Add a node to the beginning of
- *a linked list (hash_node_t).
- * @h: The head of the linked list.
- * @key: The key of the new node.
- * @value: The value of the new node.
- *
- * Return: The new head of the linked list.
- */
-
+* add_node - adds a node to the beginning of a linked list hash_node_t
+* @h: head of the linked list
+* @key: key of node
+* @value: value of node
+* Return: new head
+*/
 shash_node_t *add_node(shash_node_t **h, const char *key, const char *value)
 {
 shash_node_t *new_node;
@@ -105,18 +95,12 @@ return (*h);
 }
 
 /**
- * shash_table_set - Add an element to a sorted hash
- *table or update an existing one.
- * @ht: The hash table to which you want to add
- *or update the key/value pair.
- * @key: The key to be added or updated
- *(must not be an empty string).
- * @value: The value associated with
- *the key (must be duplicated).
- *
- * Return: 1 if the operation succeeded, 0 otherwise.
- */
-
+* shash_table_set - adds an element to the hash table
+* @ht: is the hash table you want to add or update the key/value to
+* @key: is the key and can not be an empty string
+* @value: is the value associated with the key (must be duplicated)
+* Return: 1 if it succeeded, 0 otherwise
+*/
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 unsigned long int index;
@@ -145,15 +129,11 @@ return (0);
 return (1);
 }
 /**
- * shash_table_get - Retrieve the value associated
- *with a key from a sorted hash table.
- * @ht: The sorted hash table to search in.
- * @key: The key to look up in the sorted hash table.
- *
- * Return: The value associated with the key,
- *or NULL if the key is not found.
- */
-
+* shash_table_get - Retrieves a value associated with a key
+* @ht: is the hash table
+* @key: is the key to search for
+* Return: value associated with the element or NULL if not found
+*/
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 shash_node_t *node;
