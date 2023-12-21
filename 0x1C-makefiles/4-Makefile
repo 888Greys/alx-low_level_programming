@@ -1,11 +1,21 @@
-# Trying trying and trying
+# Makefile for compiling school program
 
-
+# Compiler
 CC = gcc
+
+#Source files
 SRC = main.c school.c
+
+# Object files
 OBJ = $(SRC:.c=.o)
+
+# Exeutable names
 NAME = school
+
+# Command to remove files
 RM = rm -f
+
+# Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all : $(OBJ)
