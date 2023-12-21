@@ -13,25 +13,32 @@ OBJ = $(SRC:.c=.c)
 # Executable name
 NAME = school
 
+RM = rm -f
+
 # Command to remove files
 CFLAGS = -Wall -Werror - Wextra -pedantic
 
 # Targets: all
-# Compiles object files into an executable named 'school'
+# Compiles object files into an executable named 'school'.
+
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
 
 # Target: clean
 # Removes temporary files and the executable.
-clean:
+
+clean :
 	$(RM) *~ $(NAME)
+
+oclean : 
+	$(RM) $(OBJ)
 
 
 # Target: oclean
 # Removes object files.
-fclean: clean oclean
+fclean : clean oclean
 
 
 # Target: re
 # Removes object files and recompiles the program
-re: oclean all
+re : oclean all
