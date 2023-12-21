@@ -1,0 +1,11 @@
+# Makeup file for compiling school program
+
+#  Compiler
+CC = gcc
+
+#Source files
+SRC = main.c school.c
+
+#Target: All
+all: $(SRC)
+	$(CC) $(SRC) -o school
