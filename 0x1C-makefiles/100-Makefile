@@ -15,7 +15,8 @@ NAME = school
 CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY : all clean oclean fclean re
 
-all : m.h $(OBJ) -o $(NAME)
+all : m.h $(OBJ)
+       $(CC) $(OBJ) -o $(NAME)
 
 # Target: clean
 # Removes temporary files and the executable
