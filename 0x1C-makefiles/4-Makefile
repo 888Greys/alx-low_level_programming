@@ -1,0 +1,37 @@
+# Makefile for compiling the school program
+
+
+# Compiler
+CC = gcc
+
+# Source files
+SRC = main.c school.c
+
+# Object files
+OBJ = $(SRC:.c=.c)
+
+# Executable name
+NAME = school
+
+# Command to remove files
+CFLAGS = -Wall -Werror - Wextra -pedantic
+
+# Targets: all
+# Compiles object files into an executable named 'school'
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+
+# Target: clean
+# Removes temporary files and the executable.
+clean:
+	$(RM) *~ $(NAME)
+
+
+# Target: oclean
+# Removes object files.
+fclean: clean oclean
+
+
+# Target: re
+# Removes object files and recompiles the program
+re: oclean all
