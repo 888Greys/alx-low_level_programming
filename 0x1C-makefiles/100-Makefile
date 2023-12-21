@@ -1,35 +1,19 @@
-# Makefile for compiling the school program
-
-# Compiler
 CC = gcc
-
-# Source files
 SRC = main.c school.c
-
-# Object files
 OBJ = $(SRC:.c=.o)
-
-# Executable name
 NAME = school
-
 CFLAGS = -Wall -Werror -Wextra -pedantic
 .PHONY : all clean oclean fclean re
 
 all : m.h $(OBJ)
-       $(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
-# Target: clean
-# Removes temporary files and the executable
 clean :
 	$(RM) *~ $(NAME)
 
-# Target: oclean
-# Removes object files
 oclean :
 	$(RM) $(OBJ)
 
-# Target: re
-# Removes object files and recompiles the program
 fclean : clean oclean
 
 re : oclean all
