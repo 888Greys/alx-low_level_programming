@@ -22,7 +22,7 @@ CFLAGS = -Wall -Werror - Wextra -pedantic
 # Compiles object files into an executable named 'school'.
 
 all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+	$(CC) $(OBJ) -o $(NAME)
 
 # Target: clean
 # Removes temporary files and the executable.
