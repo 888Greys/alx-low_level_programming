@@ -1,2 +1,6 @@
+# Makefile for compiling the school program
+
+# Target: all
+#  Compiles main.c and school.c into an executable named 'school'
 all : main.c school.c
 	gcc main.c school.c -o school
