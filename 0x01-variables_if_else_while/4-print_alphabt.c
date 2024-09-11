@@ -20,3 +20,10 @@ putchar('\n');
 return (0);
 }
 
+/**
+ * for (abc = 'a'; abc <= 'z'; abc++)
+ * {
+ * if (abc == 'q' && abc == 'e')
+ * putchar(abc);
+ * }
+ */
