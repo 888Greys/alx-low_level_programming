@@ -21,6 +21,8 @@ return (0);
 }
 
 /**
+ * another way to solve this problem is:
+ * 
  * for (abc = 'a'; abc <= 'z'; abc++)
  * {
  * if (abc == 'q' && abc == 'e')
