@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -E -o c # -E flag preprocesses the file and outputs to c
+gcc $CFILE -E -o c
